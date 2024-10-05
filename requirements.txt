@@ -15,5 +15,7 @@ scipy
 Flask
 Flask-Cors
 tensorflow
+statsmodels
+
 
 -e .
