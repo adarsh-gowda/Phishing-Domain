@@ -16,6 +16,7 @@ Flask
 Flask-Cors
 tensorflow
 statsmodels
+scikit-learn
 
 
 -e .
