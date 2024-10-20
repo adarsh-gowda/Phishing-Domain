@@ -17,6 +17,7 @@ Flask-Cors
 tensorflow
 statsmodels
 scikit-learn
+imblearn
 
 
 -e .
