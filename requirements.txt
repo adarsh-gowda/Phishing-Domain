@@ -18,6 +18,7 @@ tensorflow
 statsmodels
 scikit-learn
 imblearn
+gdown
 
 
 -e .
