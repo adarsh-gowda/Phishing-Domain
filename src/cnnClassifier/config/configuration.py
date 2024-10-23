@@ -6,15 +6,17 @@ from cnnClassifier.entity.config_entity import (DataIngestionConfig,
 class ConfigurationManager:
     def __init__(
         self,
-        config_filepath = CONFIG_FILE_PATH,
-        params_filepath = PARAMS_FILE_PATH,
-        schema_filepath = SCHEMA_FILE_PATH):
+        config_filepath = CONFIG_FILE_PATH,              #cnnClassifier.constants
+        params_filepath = PARAMS_FILE_PATH,              #cnnClassifier.constants
+        schema_filepath = SCHEMA_FILE_PATH):             #ccnnClassifier.constants
 
-        self.config = read_yaml(config_filepath)
-        self.params = read_yaml(params_filepath)
-        self.schema = read_yaml(schema_filepath)
 
-        create_directories([self.config.artifacts_root])
+        self.config = read_yaml(config_filepath)         #cnnClassifier.utils.common import read_yaml
+        self.params = read_yaml(params_filepath)         #cnnClassifier.utils.common import read_yaml
+        self.schema = read_yaml(schema_filepath)         #cnnClassifier.utils.common import read_yaml
+
+
+        create_directories([self.config.artifacts_root])    #cnnClassifier.utils.common import create_directories
 
 
     
