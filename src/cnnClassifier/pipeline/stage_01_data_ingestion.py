@@ -15,3 +15,5 @@ class DataIngestionTrainingPipeline:
         data_ingestion = DataIngestion(config=data_ingestion_config)         #from cnnClassifier.config.configuration import ConfigurationManager
         data_ingestion.download_file()
         data_ingestion.extract_zip_file()
+
+        
