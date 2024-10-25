@@ -2,8 +2,19 @@ from cnnClassifier.constants import *
 from cnnClassifier.utils.common import read_yaml, create_directories
 from cnnClassifier.entity.config_entity import (DataIngestionConfig,
                                            )
+"""from cnnClassifier.constants import * – Imports all constants, such as file paths or parameter names, 
+        from a module named cnnClassifier.constants.
+from cnnClassifier.utils.common import read_yaml, create_directories – 
+        Imports helper functions to read YAML files (read_yaml) and to create directories (create_directories).
+from cnnClassifier.entity.config_entity import DataIngestionConfig – Imports a configuration entity,
+        DataIngestionConfig, which will hold the settings needed for data ingestion (like downloading or reading the dataset).
+ """
 
 class ConfigurationManager:
+    """ConfigurationManager Class:
+    This class is designed to read and manage configuration settings for various parts of the project, such as data ingestion."""
+
+
     def __init__(
         self,
         config_filepath = CONFIG_FILE_PATH,              #cnnClassifier.constants
@@ -19,8 +30,22 @@ class ConfigurationManager:
         create_directories([self.config.artifacts_root])    #cnnClassifier.utils.common import create_directories
 
 
+        """__init__ Method:
+
+        Arguments:
+        config_filepath, params_filepath, schema_filepath: Default to constants representing file paths (CONFIG_FILE_PATH, 
+        PARAMS_FILE_PATH, and SCHEMA_FILE_PATH). These constants are likely defined in the cnnClassifier.constants module.
+        Functionality:
+        self.config = read_yaml(config_filepath) reads the configuration YAML file for the project settings, storing it in self.config.
+        self.params = read_yaml(params_filepath) reads additional parameters, likely model parameters, storing it in self.params.
+        self.schema = read_yaml(schema_filepath) reads a schema definition file, likely to validate the data, 
+                    and stores it in self.schema.
+        create_directories([self.config.artifacts_root]) creates a directory for storing artifacts (outputs, models, logs, etc.), 
+                 using artifacts_root, which is expected to be defined in the configuration file."""
+
+
     
-    def get_data_ingestion_config(self) -> DataIngestionConfig:
+    def get_data_ingestion_config(self) -> DataIngestionConfig:   #from cnnClassifier.entity.config_entity import (DataIngestionConfig,
         config = self.config.data_ingestion
 
         create_directories([config.root_dir])
@@ -33,6 +58,20 @@ class ConfigurationManager:
         )
 
         return data_ingestion_config
+    
+    """get_data_ingestion_config Method:
+
+Purpose: This method retrieves and configures the settings for data ingestion.
+Steps:
+config = self.config.data_ingestion – Extracts the data ingestion configuration settings from self.config.
+create_directories([config.root_dir]) – Ensures the root directory for data ingestion exists (e.g., a directory to store raw or processed data).
+DataIngestionConfig Object:
+Creates a DataIngestionConfig instance with the following settings:
+root_dir: Root directory for data ingestion.
+source_URL: URL for the source data.
+local_data_file: Path for where the data file will be saved locally.
+unzip_dir: Directory for unzipping the downloaded file (if needed).
+Return: Returns an instance of DataIngestionConfig with the necessary parameters for data ingestion."""
     
 
 
