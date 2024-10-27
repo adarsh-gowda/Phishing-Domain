@@ -1,6 +1,6 @@
 from cnnClassifier.constants import *
 from cnnClassifier.utils.common import read_yaml, create_directories
-from cnnClassifier.entity.config_entity import (DataIngestionConfig,
+from cnnClassifier.entity.config_entity import (DataIngestionConfig,DataValidationConfig
                                            )
 """from cnnClassifier.constants import * – Imports all constants, such as file paths or parameter names, 
         from a module named cnnClassifier.constants.
@@ -75,20 +75,20 @@ Return: Returns an instance of DataIngestionConfig with the necessary parameters
     
 
 
-    # def get_data_validation_config(self) -> DataValidationConfig:
-    #     config = self.config.data_validation
-    #     schema = self.schema.COLUMNS
+    def get_data_validation_config(self) -> DataValidationConfig:
+        config = self.config.data_validation
+        schema = self.schema.COLUMNS
 
-    #     create_directories([config.root_dir])
+        create_directories([config.root_dir])
 
-    #     data_validation_config = DataValidationConfig(
-    #         root_dir=config.root_dir,
-    #         STATUS_FILE=config.STATUS_FILE,
-    #         unzip_data_dir = config.unzip_data_dir,
-    #         all_schema=schema,
-    #     )
+        data_validation_config = DataValidationConfig(
+            root_dir=config.root_dir,
+            STATUS_FILE=config.STATUS_FILE,
+            unzip_data_dir = config.unzip_data_dir,
+            all_schema=schema,
+        )
 
-    #     return data_validation_config
+        return data_validation_config
     
 
 
