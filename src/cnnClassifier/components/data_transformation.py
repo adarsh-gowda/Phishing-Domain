@@ -1,5 +1,6 @@
 import os
 from cnnClassifier import logger
+from cnnClassifier.entity.config_entity import DataTransformationConfig
 from sklearn.model_selection import train_test_split
 import pandas as pd
 
