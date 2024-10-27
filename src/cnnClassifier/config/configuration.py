@@ -63,8 +63,8 @@ class ConfigurationManager:
 
 Purpose: This method retrieves and configures the settings for data ingestion.
 Steps:
-config = self.config.data_ingestion – Extracts the data ingestion configuration settings from self.config.
-create_directories([config.root_dir]) – Ensures the root directory for data ingestion exists (e.g., a directory to store raw or processed data).
+config = self.config.data_ingestion - Extracts the data ingestion configuration settings from self.config.
+create_directories([config.root_dir]) - Ensures the root directory for data ingestion exists (e.g., a directory to store raw or processed data).
 DataIngestionConfig Object:
 Creates a DataIngestionConfig instance with the following settings:
 root_dir: Root directory for data ingestion.
